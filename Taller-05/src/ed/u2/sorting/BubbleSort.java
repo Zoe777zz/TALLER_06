@@ -6,13 +6,16 @@ public final class BubbleSort {
 
     public static void sort(int[] a, boolean trace) {
 
-
+        if (a == null)
+            return; // caso borde
         int n = a.length; // guarda el tamaño total del arreglo
 
         //Bucle Externo (i): Controla el número de pasadas.
         // se tiene n' elementos, con 'n-1' pasadas se asegura de que se ordene
 
         for (int i = 0; i < n - 1; i++) {
+
+
 
             boolean swapped = false; //bandera de "Corte Temprano" --> noti cuando se ordena
             // Bucle Interno (j):  compara vecinos desde el inicio (j=0) hasta el final de la sección "desordenada"
