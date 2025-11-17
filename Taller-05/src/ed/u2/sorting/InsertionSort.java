@@ -7,6 +7,8 @@ import java.util.Arrays;
 public final class InsertionSort {
 
     public static void sort(int[] a, boolean trace) {
+        if (a == null)
+            return;
         for (int i = 1; i < a.length; i++) { // i= 1 , xq se supone que la primera carta a[0] ya está "ordenada"
 
             // 'key' es el elemento a insertar
