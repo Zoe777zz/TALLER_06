@@ -6,7 +6,8 @@ import java.util.Arrays;
 public final class SelectionSort {
 
     public static void sort(int[] a, boolean trace) {
-        if (a == null) return;
+        if (a == null)
+            return;
 
         int n = a.length;
 
