@@ -1,5 +1,5 @@
-# TALLER_05
-Implementar y comparar tres algoritmos de ordenación in-place sobre arreglos pequeños, y validar su funcionamiento con trazas y casos de prueba reproducibles.
+# TALLER_06
+Ejecutar y analizar comparativamente los algoritmos de Burbuja, Selección e Inserción sobre casos de prueba, para determinar cuándo conviene cada uno en función de tamaño, grado de orden y duplicados.
 
 **Autores:**
 
@@ -7,11 +7,32 @@ Implementar y comparar tres algoritmos de ordenación in-place sobre arreglos pe
 * Gyna Yupanqui 
 
 --- 
-# Decisiones de Diseño  
+# Descripción
 
-*  **Clases de Utilidad:** Se implemento InsertionSort, SelectionSort y BubbleSort como clases con métodos estáticos debido a que no es necesario crear ibjetos para poder ordenar un arreglo.
-*  **Trazas:** Se añadio un paráremtro Boolean en cada método sort, lo que permite usar el algoritmo de forma silenciosa.
-*  **Manejo de datos:** En la clase principal SortingDemo, se uso el método .clone() antes de enviar los arreglos a ordenar lo que asegura qu el arreglo no se modifique permitiendo reutilizarlo son interferencias.
+Este taller compara tres algoritmos clasicos de ordenacion BubbleSort, InsertionSort y SelecntionSort los cuales fueron instrumentados para registar:
+* Tiempo
+* Comparaciones realizadas
+* Swaps (movimientos)
+* Mediana de ejecuciones
+  
+Esta comparación se relaiza sobre 4 datasets con características diferentes de 100 y 500 datos.
+
+----
+# Estructura de Proyecto
+* AlgoritmosOrdenacion/
+  
+  BubbleSort.java/
+  InsertionSort.java/
+  SelectionSort.java
+* ArchivosCSV/
+  
+  Cita.java
+  Paciente.java/
+  Inventario.java
+* View/
+  
+  SortingDemo.java/
+  ConsoleTable.java
 
 ----
 # Modo de ejecución 
@@ -28,9 +49,12 @@ Implementar y comparar tres algoritmos de ordenación in-place sobre arreglos pe
 4. Se mostrara en consola los algoritmos de ordenación requeridos
 
 ---
-# Manejo de Casos Borde 
-Se consideraron y probaron los siguientes casos especiales para asegurar la robustez:
-* **Arreglos Nulos:** Se incluyó una validación inicial (if (a == null) return;) en todos los algoritmos para evitar errores de tipo NullPointerException si se reciben datos vacíos.
-* **Arreglos Ya Ordenados:** Se probó específicamente BubbleSort con un arreglo ordenado [1, 2, 3, 4, 5] para verificar que la optimización de "corte temprano" detuviera el algoritmo en la primer pasada.
-* **Elementos Duplicados:** Se realizaron pruebas con arreglos como [2, 2, 2, 2] para confirmar que los algoritmos ne se encuentren en bucles infinitos y manejen correctamente los valores iguales. 
+## Matriz de recomendacion de algoritmos
+
+| Algoritmo           | Dataset pequeño  | Dataset mediano   | Dataset grande  | Datos casi ordenados  | Datos inversos  | Comentario general  |
+|---------------------|------------------|-------------------|-----------------|-----------------------|-----------------|---------------------|
+| **Bubble Sort**     | Malo             | Muy malo          | Peor            | Bueno                 | Muy malo        | No recomendado salvo para enseñanza |
+| **Insertion Sort**  | Muy bueno        | Bueno             | Malo            | Excelente             | Malo            | Ideal para listas casi ordenadas |
+| **Selection Sort**  | Regular          | Regular           | Regular         | Regular               | Regular         | Útil cuando se requieren mínimos swaps |
+
 
